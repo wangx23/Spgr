@@ -1,0 +1,3 @@
+useDynLib(Spgr)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")

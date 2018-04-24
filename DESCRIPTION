@@ -1,0 +1,11 @@
+Package: Spgr
+Type: Package
+Title: Estimate subgroups via concave fusion
+Version: 1.0
+Date: 2018-02-15
+Author: Xin Wang
+Maintainer: Xin Wang <wangxin8923@gmail.com>
+Description: Spgr provides functions to estimate subgroups in linear regression via concave fusion based on SCAD penalty with repeated measures. Weights associated with pairwise penalties can be specified.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.14)
+LinkingTo: Rcpp, RcppArmadillo
