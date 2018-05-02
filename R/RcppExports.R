@@ -41,6 +41,22 @@ cal_initialx <- function(y, x, lam0 = 0.0001) {
     .Call('_Spgr_cal_initialx', PACKAGE = 'Spgr', y, x, lam0)
 }
 
+cal_initialr <- function(indexy, y, z, x, lam0 = 0.0001) {
+    .Call('_Spgr_cal_initialr', PACKAGE = 'Spgr', indexy, y, z, x, lam0)
+}
+
+cal_initialrx <- function(indexy, y, x, lam0 = 0.0001) {
+    .Call('_Spgr_cal_initialrx', PACKAGE = 'Spgr', indexy, y, x, lam0)
+}
+
+cal_initialr2 <- function(indexy, y, z, x, K0, lam0 = 0.0001) {
+    .Call('_Spgr_cal_initialr2', PACKAGE = 'Spgr', indexy, y, z, x, K0, lam0)
+}
+
+cal_initialrx2 <- function(indexy, y, x, K0, lam0 = 0.0001) {
+    .Call('_Spgr_cal_initialrx2', PACKAGE = 'Spgr', indexy, y, x, K0, lam0)
+}
+
 getgroup <- function(deltam, n, tol = 1e-4) {
     .Call('_Spgr_getgroup', PACKAGE = 'Spgr', deltam, n, tol)
 }

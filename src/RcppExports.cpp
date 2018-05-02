@@ -157,6 +157,66 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cal_initialr
+arma::mat cal_initialr(arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, double lam0);
+RcppExport SEXP _Spgr_cal_initialr(SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP lam0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type lam0(lam0SEXP);
+    rcpp_result_gen = Rcpp::wrap(cal_initialr(indexy, y, z, x, lam0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cal_initialrx
+arma::mat cal_initialrx(arma::vec indexy, arma::vec& y, arma::mat& x, double lam0);
+RcppExport SEXP _Spgr_cal_initialrx(SEXP indexySEXP, SEXP ySEXP, SEXP xSEXP, SEXP lam0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type lam0(lam0SEXP);
+    rcpp_result_gen = Rcpp::wrap(cal_initialrx(indexy, y, x, lam0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cal_initialr2
+arma::mat cal_initialr2(arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, int K0, double lam0);
+RcppExport SEXP _Spgr_cal_initialr2(SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP K0SEXP, SEXP lam0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type K0(K0SEXP);
+    Rcpp::traits::input_parameter< double >::type lam0(lam0SEXP);
+    rcpp_result_gen = Rcpp::wrap(cal_initialr2(indexy, y, z, x, K0, lam0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cal_initialrx2
+arma::mat cal_initialrx2(arma::vec indexy, arma::vec& y, arma::mat& x, int K0, double lam0);
+RcppExport SEXP _Spgr_cal_initialrx2(SEXP indexySEXP, SEXP ySEXP, SEXP xSEXP, SEXP K0SEXP, SEXP lam0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type K0(K0SEXP);
+    Rcpp::traits::input_parameter< double >::type lam0(lam0SEXP);
+    rcpp_result_gen = Rcpp::wrap(cal_initialrx2(indexy, y, x, K0, lam0));
+    return rcpp_result_gen;
+END_RCPP
+}
 // getgroup
 arma::uvec getgroup(const arma::mat& deltam, const int n, const double tol);
 RcppExport SEXP _Spgr_getgroup(SEXP deltamSEXP, SEXP nSEXP, SEXP tolSEXP) {
@@ -318,6 +378,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Spgr_BIClogrx", (DL_FUNC) &_Spgr_BIClogrx, 5},
     {"_Spgr_cal_initial", (DL_FUNC) &_Spgr_cal_initial, 4},
     {"_Spgr_cal_initialx", (DL_FUNC) &_Spgr_cal_initialx, 3},
+    {"_Spgr_cal_initialr", (DL_FUNC) &_Spgr_cal_initialr, 5},
+    {"_Spgr_cal_initialrx", (DL_FUNC) &_Spgr_cal_initialrx, 4},
+    {"_Spgr_cal_initialr2", (DL_FUNC) &_Spgr_cal_initialr2, 6},
+    {"_Spgr_cal_initialrx2", (DL_FUNC) &_Spgr_cal_initialrx2, 5},
     {"_Spgr_getgroup", (DL_FUNC) &_Spgr_getgroup, 3},
     {"_Spgr_getorder", (DL_FUNC) &_Spgr_getorder, 1},
     {"_Spgr_Spgr", (DL_FUNC) &_Spgr_Spgr, 11},
