@@ -2,17 +2,16 @@
 \alias{Spgrx}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Use Spgr to estimate subgroups without repeated measures with individual covariatesx}
+Use Spgr to estimate subgroups without repeated measures with individual covariates x}
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Spgrx(y, z, x, weights, betam0, ...)
+Spgrx(y, x, weights, betam0, ...)
 }
 
 \arguments{
   \item{y}{ response variable.}
-  \item{z}{ explanatory variables which have the same coefficients among individuals.}
   \item{x}{ explanatory variables which have individual coefficients.}
   \item{weights}{weights associated with pairwise penalties.}
   \item{betam0}{initial values for betas.}

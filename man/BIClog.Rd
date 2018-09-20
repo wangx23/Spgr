@@ -5,7 +5,7 @@
 BIC function 
 }
 \description{
-A function gives the BIC value based on estimated results from \code{\link{concavefusion}}.
+A function gives the BIC value based on estimated results from \code{\link{concavefusion}}. Cn = log(np+q)
 }
 \usage{
 BICog(obj, y, z, x)

@@ -7,13 +7,12 @@ Use Spgr to estimate subgroups with repeated measures with individual covariates
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Spgrrx(y, indexy, z, x, weights, betam0, ...)
+Spgrrx(y, indexy, x, weights, betam0, ...)
 }
 
 \arguments{
   \item{y}{ response variable.}
   \item{indexy}{numeric numbers, index of repeated meausre sort assending}
-  \item{z}{ explanatory variables which have the same coefficients among individuals.}
   \item{x}{ explanatory variables which have individual coefficients.}
   \item{weights}{weights associated with pairwise penalties.}
   \item{betam0}{initial values for betas.}
