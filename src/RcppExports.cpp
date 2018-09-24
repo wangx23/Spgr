@@ -6,6 +6,66 @@
 
 using namespace Rcpp;
 
+// BIC
+double BIC(List& obj, arma::vec& y, arma::mat& z, arma::mat& x, double tol);
+RcppExport SEXP _Spgr_BIC(SEXP objSEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List& >::type obj(objSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(BIC(obj, y, z, x, tol));
+    return rcpp_result_gen;
+END_RCPP
+}
+// BICx
+double BICx(List& obj, arma::vec& y, arma::mat& x, double tol);
+RcppExport SEXP _Spgr_BICx(SEXP objSEXP, SEXP ySEXP, SEXP xSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List& >::type obj(objSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(BICx(obj, y, x, tol));
+    return rcpp_result_gen;
+END_RCPP
+}
+// BICr
+double BICr(List& obj, arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, double tol);
+RcppExport SEXP _Spgr_BICr(SEXP objSEXP, SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List& >::type obj(objSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(BICr(obj, indexy, y, z, x, tol));
+    return rcpp_result_gen;
+END_RCPP
+}
+// BICrx
+double BICrx(List& obj, arma::vec indexy, arma::vec& y, arma::mat& x, double tol);
+RcppExport SEXP _Spgr_BICrx(SEXP objSEXP, SEXP indexySEXP, SEXP ySEXP, SEXP xSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List& >::type obj(objSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(BICrx(obj, indexy, y, x, tol));
+    return rcpp_result_gen;
+END_RCPP
+}
 // BICc
 double BICc(List& obj, arma::vec& y, arma::mat& z, arma::mat& x, double c0, double tol);
 RcppExport SEXP _Spgr_BICc(SEXP objSEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP c0SEXP, SEXP tolSEXP) {
@@ -368,6 +428,10 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_Spgr_BIC", (DL_FUNC) &_Spgr_BIC, 5},
+    {"_Spgr_BICx", (DL_FUNC) &_Spgr_BICx, 4},
+    {"_Spgr_BICr", (DL_FUNC) &_Spgr_BICr, 6},
+    {"_Spgr_BICrx", (DL_FUNC) &_Spgr_BICrx, 5},
     {"_Spgr_BICc", (DL_FUNC) &_Spgr_BICc, 6},
     {"_Spgr_BICcx", (DL_FUNC) &_Spgr_BICcx, 5},
     {"_Spgr_BICcr", (DL_FUNC) &_Spgr_BICcr, 7},
