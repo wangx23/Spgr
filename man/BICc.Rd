@@ -5,14 +5,14 @@
 BIC function 
 }
 \description{
-A function gives the BIC value based on estimated results from \code{\link{concavefusion}}. Cn = c0log(log(np+q))
+A function gives the BIC value based on estimated results from \code{\link{Spgr}}. Cn = c0log(log(np+q))
 }
 \usage{
 BICc(obj, y, z, x, c0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj}{output of concavefusion}
+  \item{obj}{output of Spgr}
   \item{y}{ response vector with n observations .}
   \item{z}{ explanatory variables matrix which have the same coefficients among individuals.}
   \item{x}{ explanatory variables matrix with p columns which have individual coefficients.}
@@ -37,10 +37,10 @@ a numeric BIC value
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{concavefusion}}, \code{\link{BICcr}}
+\code{\link{Spgr}}, \code{\link{BICcr}}
 }
 \examples{
-## see the example in concavefusion
+## see the example in Spgr
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -5,14 +5,14 @@
 BIC function 
 }
 \description{
-A function gives the BIC value based on estimated results from \code{\link{concavefusion}}. Cn = log(np+q)
+A function gives the BIC value based on estimated results from \code{\link{Spgr}}. Cn = log(np+q)
 }
 \usage{
 BICog(obj, y, z, x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj}{output of concavefusion}
+  \item{obj}{output of Spgr}
   \item{y}{ response vector with n observations .}
   \item{z}{ explanatory variables matrix which have the same coefficients among individuals.}
   \item{x}{ explanatory variables matrix with p columns which have individual coefficients.}

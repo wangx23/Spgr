@@ -8,12 +8,12 @@ Use Spgr to estimate subgroups with repeated measures with both z
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-Spgrr(y, indexy, z, x, weights, betam0, ...)
+Spgrr(indexy,y, z, x, weights, betam0, ...)
 }
 
 \arguments{
-  \item{y}{ response variable.}
   \item{indexy}{numeric numbers, index of repeated meausre sort assending}
+  \item{y}{ response variable.}
   \item{z}{ explanatory variables which have the same coefficients among individuals.}
   \item{x}{ explanatory variables which have individual coefficients.}
   \item{weights}{weights associated with pairwise penalties.}
@@ -58,14 +58,24 @@ The details of absolute tolerance and relative tolerance can be found in Boyd, S
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x) 
-{
-  }
+  data(simdat2)
+  y <- simdat2$y
+  z <- as.matrix(simdat2[,paste("z",1:5,sep="")])
+  x <- as.matrix(simdat2[,paste("x",1:2,sep="")])
+  
+  nr <- 49
+  betam0 <- cal_initialr(indexy = simdat2$indexy,y = simdat2$y,z = z,x = x )
+  wt <- rep(1, nr*(nr-1)/2)
+  res1 <- Spgrr(indexy = simdat2$indexy, y, z, x, wt, betam0, lam = 0.1,maxiter = 1000)
+  groupest1 <- getgroup(res1$deltam, nr) 
+  BICcr(obj = res1,indexy = simdat2$indexy,y,z,x,c0 = 0.2)
+  
+  data(Cmat2)
+  ordervalue <- getorder(Cmat2)
+  wts <- exp(0.7*(1-ordervalue))
+  res2 <- Spgrr(indexy = simdat2$indexy,y, z, x, wts, betam0, lam = 0.2, maxiter = 1000)
+  groupest2 <- getgroup(res2$deltam, nr) ### the same as res2$group
+  BICcr(obj = res2,indexy = simdat2$indexy,y,z,x,c0 = 0.2)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

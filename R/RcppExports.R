@@ -49,6 +49,30 @@ BIClogrx <- function(obj, indexy, y, x, tol = 1e-4) {
     .Call('_Spgr_BIClogrx', PACKAGE = 'Spgr', obj, indexy, y, x, tol)
 }
 
+Spgr <- function(y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgr', PACKAGE = 'Spgr', y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
+selectlam <- function(y, z, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_selectlam', PACKAGE = 'Spgr', y, z, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
+}
+
+Spgrr <- function(indexy, y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrr', PACKAGE = 'Spgr', indexy, y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
+Spgrrx <- function(indexy, y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrrx', PACKAGE = 'Spgr', indexy, y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
+Spgrx <- function(y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrx', PACKAGE = 'Spgr', y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
+selectlamx <- function(y, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_selectlamx', PACKAGE = 'Spgr', y, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
+}
+
 cal_initial <- function(y, z, x, lam0 = 0.0001) {
     .Call('_Spgr_cal_initial', PACKAGE = 'Spgr', y, z, x, lam0)
 }
@@ -79,29 +103,5 @@ getgroup <- function(deltam, n, tol = 1e-4) {
 
 getorder <- function(Cmat) {
     .Call('_Spgr_getorder', PACKAGE = 'Spgr', Cmat)
-}
-
-Spgr <- function(y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_Spgr', PACKAGE = 'Spgr', y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
-}
-
-selectlam <- function(y, z, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_selectlam', PACKAGE = 'Spgr', y, z, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
-}
-
-Spgrr <- function(indexy, y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_Spgrr', PACKAGE = 'Spgr', indexy, y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
-}
-
-Spgrrx <- function(indexy, y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_Spgrrx', PACKAGE = 'Spgr', indexy, y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
-}
-
-Spgrx <- function(y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_Spgrx', PACKAGE = 'Spgr', y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
-}
-
-selectlamx <- function(y, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
-    .Call('_Spgr_selectlamx', PACKAGE = 'Spgr', y, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
 }
 

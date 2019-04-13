@@ -1,27 +1,29 @@
-\name{cal_initial}
-\alias{cal_initial}
+\name{BICrc}
+\alias{BICrc}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-A function to calculate initial values in \code{\link{Spgr}}. 
+BIC function 
 }
 \description{
-Calculate initial values for individual coefficients using the method in Ma and Huang (2017) without repeated measures.
+A function gives the BIC value based on estimated results from \code{\link{concavefusion}}. Cn = c0log(log(np+q)) with repeated measures
 }
 \usage{
-cal_initial(y, z, x,lam0)
+BICrc(indexy, obj, y, z, x, c0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{y}{response vector}
+  \item{obj}{output of concavefusion}
+  \item{indexy}{numeric numbers, index of repeated meausre sort assending}
+  \item{y}{ response vector with n observations .}
   \item{z}{ explanatory variables matrix which have the same coefficients among individuals.}
   \item{x}{ explanatory variables matrix with p columns which have individual coefficients.}
-  \item{lam0}{a constant, default value is 0.0001}
+  \item{c0}{numeric value used in modified BIC, default value is 0.2.}
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+BICc is a specical case of BICcr without repeated measures. Cn in BIC c0log(log(np + q)).
 }
 \value{
-a numeric matrix with the same dimension as x.
+a numeric BIC value
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -36,16 +38,11 @@ a numeric matrix with the same dimension as x.
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{Spgr}}
+\code{\link{Spgrr}}, \code{\link{BICcr}}
 }
 \examples{
-## calculate initial values 
-data(simdat1)
-y <- simdat1$y
-z <- as.matrix(simdat1[,paste("z",1:5,sep="")])
-x <- as.matrix(simdat1[,paste("x",1:2,sep="")])
-betam0 <- cal_initial(y = y, z = z, x = x)
-plot(betam0)
+## see the example in Spgrr
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

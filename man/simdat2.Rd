@@ -5,11 +5,11 @@
 A simulated data set for \code{\link{concavefusion}}.
 }
 \description{
-This is a simulated data set to fit model \eqn{y_i = z_i\eta + x_i\beta_i + e_i}.
+This is a simulated data set to fit model \eqn{y_{ih} = z_{ih}\eta + x_{ih}\beta_i + e_{ih}}.
 }
-\usage{data("simdat1")}
+\usage{data("simdat2")}
 \format{
-  A data frame with 400 observations on the following 10 variables.
+  A data frame with 49 locations (7 squared grid) and 30 repeated measures for each location on the following 10 variables.
   \describe{
     \item{index}{a numeric vector to index the observation.}
     \item{y}{a numeric response varaible.}
@@ -28,7 +28,7 @@ This is a simulated data set to fit model \eqn{y_i = z_i\eta + x_i\beta_i + e_i}
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
-data(simdat1)
-summary(simdat1$y)
+data(simdat2)
+summary(simdat2$y)
 }
 \keyword{datasets}
