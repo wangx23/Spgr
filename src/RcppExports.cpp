@@ -232,6 +232,29 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Spgr_penalty
+Rcpp::List Spgr_penalty(arma::vec& y, arma::mat& z, arma::mat& x, double rho, arma::mat& matpen, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
+RcppExport SEXP _Spgr_Spgr_penalty(SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP rhoSEXP, SEXP matpenSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type matpen(matpenSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type betam0(betam0SEXP);
+    Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
+    Rcpp::traits::input_parameter< double >::type gam(gamSEXP);
+    Rcpp::traits::input_parameter< double >::type lam(lamSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
+    rcpp_result_gen = Rcpp::wrap(Spgr_penalty(y, z, x, rho, matpen, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Spgrr
 Rcpp::List Spgrr(arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
 RcppExport SEXP _Spgr_Spgrr(SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
@@ -442,6 +465,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Spgr_BIClogrx", (DL_FUNC) &_Spgr_BIClogrx, 5},
     {"_Spgr_Spgr", (DL_FUNC) &_Spgr_Spgr, 11},
     {"_Spgr_selectlam", (DL_FUNC) &_Spgr_selectlam, 11},
+    {"_Spgr_Spgr_penalty", (DL_FUNC) &_Spgr_Spgr_penalty, 13},
     {"_Spgr_Spgrr", (DL_FUNC) &_Spgr_Spgrr, 12},
     {"_Spgr_Spgrrx", (DL_FUNC) &_Spgr_Spgrrx, 11},
     {"_Spgr_Spgrx", (DL_FUNC) &_Spgr_Spgrx, 10},

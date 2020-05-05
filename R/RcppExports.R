@@ -57,6 +57,10 @@ selectlam <- function(y, z, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter =
     .Call('_Spgr_selectlam', PACKAGE = 'Spgr', y, z, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
 }
 
+Spgr_penalty <- function(y, z, x, rho, matpen, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgr_penalty', PACKAGE = 'Spgr', y, z, x, rho, matpen, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
 Spgrr <- function(indexy, y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
     .Call('_Spgr_Spgrr', PACKAGE = 'Spgr', indexy, y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
 }
