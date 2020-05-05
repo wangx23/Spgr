@@ -11,8 +11,8 @@ Spgrrx(y, indexy, x, weights, betam0, ...)
 }
 
 \arguments{
-  \item{y}{ response variable.}
   \item{indexy}{numeric numbers, index of repeated meausre sort assending}
+  \item{y}{ response variable.}
   \item{x}{ explanatory variables which have individual coefficients.}
   \item{weights}{weights associated with pairwise penalties.}
   \item{betam0}{initial values for betas.}
@@ -23,9 +23,7 @@ Spgrrx(y, indexy, x, weights, betam0, ...)
   \item{tolabs}{absolute tolerance, default value is 1e-4. }
   \item{tolrel}{relative tolerance, default value is 1e-2. }
 }
-\details{
-The details of absolute tolerance and relative tolerance can be found in Boyd, S., Parikh, N., Chu, E., Peleato, B., and Eckstein, J. (2011). Distributed opti- mization and statistical learning via the alternating direction method of multipliers.
-}
+
 \value{
 \item{beta}{estimated individual coefficients.}
 \item{betaest}{estimated group coefficients.}
@@ -55,16 +53,7 @@ The details of absolute tolerance and relative tolerance can be found in Boyd, S
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x) 
-{
-  }
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

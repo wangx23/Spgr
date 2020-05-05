@@ -72,7 +72,6 @@ nr <- length(y)
 wt <- rep(1, nr*(nr-1)/2)
 res <- Spgr(y, z, x, wt, betam0, lam = 0.7,maxiter = 1000)
 groupest <- getgroup(res$deltam, nr) ## the order of estimated group may not be the same as true group
-BIClog(res, y, z, x)
 BICc(res,y,z,x,c0 = 0.2)
 
 ## the same as res$group
@@ -83,7 +82,6 @@ ordervalue <- getorder(Cmat)
 wts <- exp(0.7*(1-ordervalue))
 res2 <- Spgr(y, z, x, wts, betam0, lam = 1, maxiter = 3000)
 groupest2 <- getgroup(res2$deltam, nr) ### the same as res2$group
-BIClog(res2, y, z, x)
 BICc(res2,y,z,x,c0 = 0.2)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

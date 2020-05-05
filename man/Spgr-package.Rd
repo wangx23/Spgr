@@ -12,10 +12,10 @@
   Maintainer: Xin Wang <wangxin8923@gmail.com>
 }
 \references{
-  Ma, S. and Huang, J. (2016). Estimating subgroup-specific treatment effects via concave fusion. arXiv preprint arXiv:1607.03717.
+  Ma, S. and Huang, J. (2018). Exploration of heterogeneous treatment effects via concave fusion. arXiv preprint arXiv:1607.03717.
   
 Ma, S. and Huang, J. (2017). A concave pairwise fusion approach to subgroup analysis. Journal of the American Statistical Association, 112(517):410–423.
 
-Wang, X., Zhu, Z and Zhang, H. (2018). Estimating subgroups with spatial information with repeated measures. 
+Wang, X., Zhu, Z and Zhang, H. (2019). Estimating subgroups with spatial information with repeated measures. 
 }
 
