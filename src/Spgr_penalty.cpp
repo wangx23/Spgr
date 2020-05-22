@@ -26,7 +26,7 @@ Rcpp::List Spgr_penalty(arma::vec &y, arma::mat &z, arma::mat &x,
   arma::mat ztz = inv(z.t() * z + rho*matpen) * z.t();
   arma::vec Xty =  reshape(trans(x.each_col() % y), n0 , 1);
 
-  arma::mat Xinv = inverse(x,z,nu);
+  arma::mat Xinv = inversex(x,nu);
   arma::mat reg1 = Xinv * Xty;
   arma::mat reg2(n0,q);
   
