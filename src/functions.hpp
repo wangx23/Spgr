@@ -25,5 +25,10 @@ double BICcr(List &obj, arma::vec indexy, arma::vec &y, arma::mat &z, arma::mat 
 double BICcrx(List &obj, arma::vec indexy, arma::vec &y, arma::mat &x, double c0,double tol);
 arma::uvec getgroup(const arma::mat &b2pair, const int n, const double tol);
 
+double nsfun(double x, double th);
+double nscad(double v, double lam, const double nu =1 ,
+             const double gam  = 3);
+arma::uvec ngetgroup(arma::vec b2value,
+                     int n, double tol);
 
 #endif

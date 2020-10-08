@@ -4,6 +4,40 @@ using namespace Rcpp;
 using namespace arma;
 
 
+double nsfun(double x, double th)
+{
+  if(x!=0)
+  {
+    double thval = 1 - th/fabs(x);
+    x = thval*(thval >0)*x;
+  }
+  return(x);
+}
+
+
+double nscad(double v, double lam, const double nu =1 ,
+             const double gam  = 3)
+{
+  
+  double temp1 = lam/nu;
+  double temp2 = gam * lam;
+  double xn = fabs(v);
+  double vnew;
+  
+  if(xn <= lam + temp1)
+  {
+    vnew = nsfun(v, temp1);
+  }else if(xn <= temp2 & xn >= lam + temp1)
+  {
+    vnew = nsfun(v, temp2/((gam-1)*nu))/(1- 1/((gam - 1 )*nu));
+  }else{
+    vnew = v;
+  }
+  return(vnew);
+}
+
+
+
 // sfun
 arma::vec sfun(arma::vec x, double th)
 {

@@ -69,12 +69,24 @@ Spgrrx <- function(indexy, y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, ma
     .Call('_Spgr_Spgrrx', PACKAGE = 'Spgr', indexy, y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
 }
 
+Spgrwise_lasso <- function(y, z, x, weights, betam0, nu = 1, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrwise_lasso', PACKAGE = 'Spgr', y, z, x, weights, betam0, nu, lam, maxiter, tolabs, tolrel)
+}
+
+Spgrwise_scad <- function(y, z, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrwise_scad', PACKAGE = 'Spgr', y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
 Spgrx <- function(y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
     .Call('_Spgr_Spgrx', PACKAGE = 'Spgr', y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
 }
 
 selectlamx <- function(y, x, weights, lamv, betam0, nu = 1, gam = 3, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
     .Call('_Spgr_selectlamx', PACKAGE = 'Spgr', y, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel)
+}
+
+cal_initial0 <- function(y, z, x, lam0 = 0.0001) {
+    .Call('_Spgr_cal_initial0', PACKAGE = 'Spgr', y, z, x, lam0)
 }
 
 cal_initial <- function(y, z, x, lam0 = 0.0001) {
@@ -103,6 +115,10 @@ cal_initialrx2 <- function(indexy, y, x, K0, lam0 = 0.0001) {
 
 getgroup <- function(deltam, n, tol = 1e-4) {
     .Call('_Spgr_getgroup', PACKAGE = 'Spgr', deltam, n, tol)
+}
+
+ngetgroup <- function(b2value, n, tol = 1e-3) {
+    .Call('_Spgr_ngetgroup', PACKAGE = 'Spgr', b2value, n, tol)
 }
 
 getorder <- function(Cmat) {

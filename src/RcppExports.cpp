@@ -298,6 +298,47 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Spgrwise_lasso
+Rcpp::List Spgrwise_lasso(arma::vec& y, arma::mat& z, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double lam, int maxiter, double tolabs, double tolrel);
+RcppExport SEXP _Spgr_Spgrwise_lasso(SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type betam0(betam0SEXP);
+    Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
+    Rcpp::traits::input_parameter< double >::type lam(lamSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
+    rcpp_result_gen = Rcpp::wrap(Spgrwise_lasso(y, z, x, weights, betam0, nu, lam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Spgrwise_scad
+Rcpp::List Spgrwise_scad(arma::vec& y, arma::mat& z, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
+RcppExport SEXP _Spgr_Spgrwise_scad(SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type betam0(betam0SEXP);
+    Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
+    Rcpp::traits::input_parameter< double >::type gam(gamSEXP);
+    Rcpp::traits::input_parameter< double >::type lam(lamSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
+    rcpp_result_gen = Rcpp::wrap(Spgrwise_scad(y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Spgrx
 Rcpp::List Spgrx(arma::vec& y, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
 RcppExport SEXP _Spgr_Spgrx(SEXP ySEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
@@ -335,6 +376,20 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
     Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
     rcpp_result_gen = Rcpp::wrap(selectlamx(y, x, weights, lamv, betam0, nu, gam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cal_initial0
+arma::mat cal_initial0(arma::vec& y, arma::mat& z, arma::mat& x, double lam0);
+RcppExport SEXP _Spgr_cal_initial0(SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP lam0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type lam0(lam0SEXP);
+    rcpp_result_gen = Rcpp::wrap(cal_initial0(y, z, x, lam0));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -438,6 +493,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// ngetgroup
+arma::uvec ngetgroup(arma::vec b2value, int n, double tol);
+RcppExport SEXP _Spgr_ngetgroup(SEXP b2valueSEXP, SEXP nSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type b2value(b2valueSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(ngetgroup(b2value, n, tol));
+    return rcpp_result_gen;
+END_RCPP
+}
 // getorder
 arma::uvec getorder(arma::sp_mat& Cmat);
 RcppExport SEXP _Spgr_getorder(SEXP CmatSEXP) {
@@ -448,40 +516,4 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(getorder(Cmat));
     return rcpp_result_gen;
 END_RCPP
-}
-
-static const R_CallMethodDef CallEntries[] = {
-    {"_Spgr_BIC", (DL_FUNC) &_Spgr_BIC, 5},
-    {"_Spgr_BICx", (DL_FUNC) &_Spgr_BICx, 4},
-    {"_Spgr_BICr", (DL_FUNC) &_Spgr_BICr, 6},
-    {"_Spgr_BICrx", (DL_FUNC) &_Spgr_BICrx, 5},
-    {"_Spgr_BICc", (DL_FUNC) &_Spgr_BICc, 6},
-    {"_Spgr_BICcx", (DL_FUNC) &_Spgr_BICcx, 5},
-    {"_Spgr_BICcr", (DL_FUNC) &_Spgr_BICcr, 7},
-    {"_Spgr_BICcrx", (DL_FUNC) &_Spgr_BICcrx, 6},
-    {"_Spgr_BIClog", (DL_FUNC) &_Spgr_BIClog, 5},
-    {"_Spgr_BIClogx", (DL_FUNC) &_Spgr_BIClogx, 4},
-    {"_Spgr_BIClogr", (DL_FUNC) &_Spgr_BIClogr, 6},
-    {"_Spgr_BIClogrx", (DL_FUNC) &_Spgr_BIClogrx, 5},
-    {"_Spgr_Spgr", (DL_FUNC) &_Spgr_Spgr, 11},
-    {"_Spgr_selectlam", (DL_FUNC) &_Spgr_selectlam, 11},
-    {"_Spgr_Spgr_penalty", (DL_FUNC) &_Spgr_Spgr_penalty, 13},
-    {"_Spgr_Spgrr", (DL_FUNC) &_Spgr_Spgrr, 12},
-    {"_Spgr_Spgrrx", (DL_FUNC) &_Spgr_Spgrrx, 11},
-    {"_Spgr_Spgrx", (DL_FUNC) &_Spgr_Spgrx, 10},
-    {"_Spgr_selectlamx", (DL_FUNC) &_Spgr_selectlamx, 10},
-    {"_Spgr_cal_initial", (DL_FUNC) &_Spgr_cal_initial, 4},
-    {"_Spgr_cal_initialx", (DL_FUNC) &_Spgr_cal_initialx, 3},
-    {"_Spgr_cal_initialr", (DL_FUNC) &_Spgr_cal_initialr, 5},
-    {"_Spgr_cal_initialrx", (DL_FUNC) &_Spgr_cal_initialrx, 4},
-    {"_Spgr_cal_initialr2", (DL_FUNC) &_Spgr_cal_initialr2, 6},
-    {"_Spgr_cal_initialrx2", (DL_FUNC) &_Spgr_cal_initialrx2, 5},
-    {"_Spgr_getgroup", (DL_FUNC) &_Spgr_getgroup, 3},
-    {"_Spgr_getorder", (DL_FUNC) &_Spgr_getorder, 1},
-    {NULL, NULL, 0}
-};
-
-RcppExport void R_init_Spgr(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
 }
