@@ -339,6 +339,49 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Spgrwise_rep_lasso
+Rcpp::List Spgrwise_rep_lasso(arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double lam, int maxiter, double tolabs, double tolrel);
+RcppExport SEXP _Spgr_Spgrwise_rep_lasso(SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type betam0(betam0SEXP);
+    Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
+    Rcpp::traits::input_parameter< double >::type lam(lamSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
+    rcpp_result_gen = Rcpp::wrap(Spgrwise_rep_lasso(indexy, y, z, x, weights, betam0, nu, lam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Spgrwise_rep_scad
+Rcpp::List Spgrwise_rep_scad(arma::vec indexy, arma::vec& y, arma::mat& z, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
+RcppExport SEXP _Spgr_Spgrwise_rep_scad(SEXP indexySEXP, SEXP ySEXP, SEXP zSEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type indexy(indexySEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type z(zSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type betam0(betam0SEXP);
+    Rcpp::traits::input_parameter< double >::type nu(nuSEXP);
+    Rcpp::traits::input_parameter< double >::type gam(gamSEXP);
+    Rcpp::traits::input_parameter< double >::type lam(lamSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type tolabs(tolabsSEXP);
+    Rcpp::traits::input_parameter< double >::type tolrel(tolrelSEXP);
+    rcpp_result_gen = Rcpp::wrap(Spgrwise_rep_scad(indexy, y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Spgrx
 Rcpp::List Spgrx(arma::vec& y, arma::mat& x, arma::vec& weights, arma::mat& betam0, double nu, double gam, double lam, int maxiter, double tolabs, double tolrel);
 RcppExport SEXP _Spgr_Spgrx(SEXP ySEXP, SEXP xSEXP, SEXP weightsSEXP, SEXP betam0SEXP, SEXP nuSEXP, SEXP gamSEXP, SEXP lamSEXP, SEXP maxiterSEXP, SEXP tolabsSEXP, SEXP tolrelSEXP) {
