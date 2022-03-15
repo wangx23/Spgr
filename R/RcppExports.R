@@ -85,6 +85,14 @@ Spgrwise_rep_scad <- function(indexy, y, z, x, weights, betam0, nu = 1, gam = 3,
     .Call('_Spgr_Spgrwise_rep_scad', PACKAGE = 'Spgr', indexy, y, z, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
 }
 
+Spgrwise_repx_lasso <- function(indexy, y, x, weights, betam0, nu = 1, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrwise_repx_lasso', PACKAGE = 'Spgr', indexy, y, x, weights, betam0, nu, lam, maxiter, tolabs, tolrel)
+}
+
+Spgrwise_repx_scad <- function(indexy, y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
+    .Call('_Spgr_Spgrwise_repx_scad', PACKAGE = 'Spgr', indexy, y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
+}
+
 Spgrx <- function(y, x, weights, betam0, nu = 1, gam = 3, lam = 0.5, maxiter = 1000L, tolabs = 1e-4, tolrel = 1e-2) {
     .Call('_Spgr_Spgrx', PACKAGE = 'Spgr', y, x, weights, betam0, nu, gam, lam, maxiter, tolabs, tolrel)
 }

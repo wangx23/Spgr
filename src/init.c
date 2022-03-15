@@ -39,6 +39,8 @@ extern SEXP _Spgr_Spgrrx(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, S
 extern SEXP _Spgr_Spgrwise_lasso(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _Spgr_Spgrwise_rep_lasso(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _Spgr_Spgrwise_rep_scad(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP _Spgr_Spgrwise_repx_lasso(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP _Spgr_Spgrwise_repx_scad(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _Spgr_Spgrwise_scad(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _Spgr_Spgrx(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 
@@ -74,6 +76,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Spgr_Spgrwise_lasso",     (DL_FUNC) &_Spgr_Spgrwise_lasso,     10},
     {"_Spgr_Spgrwise_rep_lasso", (DL_FUNC) &_Spgr_Spgrwise_rep_lasso, 11},
     {"_Spgr_Spgrwise_rep_scad",  (DL_FUNC) &_Spgr_Spgrwise_rep_scad,  12},
+    {"_Spgr_Spgrwise_repx_lasso", (DL_FUNC) &_Spgr_Spgrwise_repx_lasso, 10},
+    {"_Spgr_Spgrwise_repx_scad",  (DL_FUNC) &_Spgr_Spgrwise_repx_scad,  11},
     {"_Spgr_Spgrwise_scad",      (DL_FUNC) &_Spgr_Spgrwise_scad,      11},
     {"_Spgr_Spgrx",              (DL_FUNC) &_Spgr_Spgrx,              10},
     {NULL, NULL, 0}
